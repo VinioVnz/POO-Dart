@@ -12,7 +12,11 @@ void main(){
   Carrinho carrinho = new Carrinho();
 
   carrinho.addProduto(p1);
+  
   carrinho.addProduto(p2);
+
+  carrinho.addProduto(Produto("Chocolate",20.0));
+
 
   carrinho.mostrarCarrinho();
 
