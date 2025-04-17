@@ -4,9 +4,9 @@ import '../exercicioDesafio/Produto.dart';
 class Carrinho {
   List<Produto> produtos = [];
 
-  bool addProduto(Produto p){
+  void addProduto(Produto p){
     produtos.add(p);
-    return true;
+    print("Produto Adicionado: ${p.nome}");
   }
 
   void mostrarCarrinho(){
