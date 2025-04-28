@@ -11,8 +11,12 @@
   no dart usamos _(underscode ou underline) no inicio do nome de variaveis ou
   métodos para torna-los privados ao arquivo onde estão sendo definidos.
  */
+import 'Aluno.dart';
 import 'ContaBancaria.dart';
+import 'Login.dart';
 import 'Produto.dart';
+import 'Semaforo.dart';
+import 'Temperatura.dart';
 
 void main(List<String> args) {
   ContaBancaria conta = new ContaBancaria("Vinicius");
@@ -48,4 +52,29 @@ void main(List<String> args) {
   
   //p.nome e p.preco são getters
   print("Produto: ${prod.nome} | Preço: ${prod.preco}");
+
+  //login de usuario
+  Login user = Login();
+  user.autenticar("123");//senha incorreta;
+  user.autenticar("123abc");//senha incorreta;
+  
+  //semaforo
+  var semaforo = Semaforo();
+  semaforo.mostrarStatus();
+  semaforo.mudaCor();
+  semaforo.mostrarStatus();
+
+  //aluno
+  Aluno aluno = Aluno("Vinicius");
+  aluno.nota = 9;
+  print("Situação do aluno: ${aluno.situacao} Nota: ${aluno.nota}");
+
+  //temperatura
+  Temperatura t = Temperatura();
+  t.celsius = 25;
+  print("Temperatura em celsius: ${t.celsius}");
+  print("Temperatura em fahreinheit: ${t.fahrenheit}");
+  
+  t.fahrenheit = 96.20;
+  print("Convertido para celsius: ${t.celsius.toStringAsFixed(2)}");
 }
